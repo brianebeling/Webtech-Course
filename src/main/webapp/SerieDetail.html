@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="de">
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="Steam2.css">
+	<link rel="stylesheet" href="https://use.typekit.net/jfo2joa.css">
+	<script src="interaction.js"></script> 
+	<script src="https://kit.fontawesome.com/7096016fc8.js" crossorigin="anonymous"></script>
+<title>SerieDetail</title>
+</head>
+<body>
+	
+	<header>
+		<nav>
+			<div>
+				<a href="MainSite.html" class="logo">STEAM™</a>
+			</div>
+			<div class="search">
+				<a><i class="fas fa-search"></i></a>
+				<input type="text" placeholder="Suche">
+			</div>
+			<ul class="nav-links">
+				<li><a class="bigButtonMute">Neue Serie</a></li>
+				<li><img src="img_avatar.png" alt="Avatar" class="avatar"></li>
+				<li><a href="#" onClick="openSignIn();" class="textButton">Anmelden</a></li>
+			</ul>
+		</nav>
+	</header>
+	
+	<div class="details">
+		<img src="Thumbs/images.jpg" alt="Banner">
+	</div>
+	
+	<div>
+		<div class="detailGrid">
+			<div class="dtHead">
+				<i class="fas fa-arrow-left fa-3x"></i>
+				<a class="dtHeadText" href="MainSite.html">Hackerman</a>
+			</div>
+			<a class="dtEpi">Folgen</a>
+			<a class="dtEpiV">12</a>
+			<a class="dtSea">Seasons</a>
+			<a class="dtSeaV">2</a>
+			<a class="dtGen">Genre</a>
+			<a class="dtGenV">Hacking</a>
+			<a class="dtPla">Platform</a>
+			<a class="dtPlaV">Hackflix</a>
+			<a class="dtRat">Rating</a>
+			<a class="dtRatV">Hacktastisch</a>
+			<a class="dtCom">Kommentar</a> 
+			<a class="dtComV">Super Serie um nach dem Hacken einfach mal abzuschalten. Trifft meinem Humor voll und ist einfach realitätsnah.</a> 
+			<div class="dtEdit"><div><a href="#" class="bigButton">Bearbeiten</a></div></div>
+		</div>
+	</div>
+	
+	<div class="bg-modal">
+		<div class="modal-content">
+			<input type="text" placeholder="Benutzername">
+			<input type="password" placeholder="Passwort">
+			<a href="#" class="textButton">Bestätigen</a>
+			<a href="#" onClick="closeSignIn();" class="altTextButton">Abbrechen</a>
+			<a href="#" onClick="closeSignIn(); openCreate();" class="altTextButton">Erstellen</a>
+		</div>
+	</div>
+	
+	<div class="bg-modal">
+		<div class="modal-content">
+			<input type="text" placeholder="Benutzername">
+			<input type="password" placeholder="Passwort">
+			<a href="#" class="textButton">Bestätigen</a>
+			<a href="#" onClick="closeSignIn();" class="altTextButton">Abbrechen</a>
+			<a href="#" onClick="closeSignIn(); openCreate();" class="altTextButton">Sign Up</a>
+		</div>
+	</div>
+	
+	<div class="bg-create">
+		<div class="modal-content">
+			<input type="text" placeholder="Benutzername">
+			<input type="password" placeholder="Passwort">
+			<a href="#" class="textButton">Erstellen</a>
+			<a href="#" onClick="closeCreate();" class="altTextButton">Abbrechen</a>
+		</div>
+	</div>
+</body>
+</html>
