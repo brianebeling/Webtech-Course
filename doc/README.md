@@ -5,7 +5,12 @@
 Brian-Julian Ebeling
 1530505
 
-Ich habe quasi alles gemacht was mit Backend zu tun hatte. REST, Design, Testing und implementierung dieser. Außerdem hab ich noch das Design von der Website übernommen. 
+Ich habe quasi alles gemacht was mit Backend zu tun hatte. REST, Design, Testing und implementierung dieser. Außerdem hab ich noch das Design von der Website übernommen.
+
+Kai Bennet Lindow 
+1433861
+
+Ich habe die Wireframes gezeichnet und die html und css dateien geschrieben, so dass es den Designvorlagen entspricht.
 
 ## Testing
 
