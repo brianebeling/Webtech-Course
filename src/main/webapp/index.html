@@ -1,22 +1,25 @@
-<!doctype html>
-<html lang="de">
-<head>
+<?xml version='1.0' encoding='UTF-8' ?>
+<!doctype html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml">
+<html lang="de"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+<h:head>
 	<meta charset="utf-8">
 	<link rel="stylesheet" href="Steam2.css">
 	<link rel="stylesheet" href="https://use.typekit.net/jfo2joa.css">
 	<script src="interaction.js"></script> 
 	<script src="https://kit.fontawesome.com/7096016fc8.js" crossorigin="anonymous"></script>
 	<title>Steam Home</title>
-</head>
-<body>
+</h:head>
+<h:body>
 	<header>
 		<nav>
 			<div>
 				<a href="#" class="logo">STEAM™</a>
 			</div>
 			<div class="search">
-				<a><i class="fas fa-search"></i></a>
-				<input type="text" placeholder="Suche">
+                            <a><i class="fas fa-search"></i></a>
+                            <input value="#{searchBean.searchText}" placeholder="Suche"/>
 			</div>
 			<ul class="nav-links">
 				<li><a href="NeueSerie.html" class="bigButton">Neue Serie</a></li>
@@ -86,5 +89,5 @@
 			<a href="#" onClick="closeCreate();" class="altTextButton">Abbrechen</a>
 		</div>
 	</div>
-</body>
+</h:body>
 </html>
