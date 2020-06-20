@@ -22,16 +22,16 @@ export class SeriesService {
 
   addOrModifySeries(seriesData: ISeriesData)
   {
-    return this.http.post(this.url + 'series?username=' + this.username, seriesData);
+    return this.http.post(this.url + 'series?username=' + this.username, seriesData).subscribe(console.log);
   }
 }
 
 export interface ISeriesData
 {
   title: string;
-  seasons: number;
+  numberOfSeasons: number;
   genre: string;
-  platform: string;
-  rating: number;
+  streamingProvider: string;
+  score: number;
   remark: string;
 }

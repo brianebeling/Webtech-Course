@@ -27,10 +27,10 @@ export class NewSeriesFormComponent implements OnInit {
   onSubmit(form: FormGroup) {
     this.seriesService.addOrModifySeries({
       title: form.value.title,
-      seasons: form.value.seasons,
+      numberOfSeasons: form.value.seasons,
       genre: form.value.genre,
-      platform: form.value.platform,
-      rating: form.value.rating,
+      streamingProvider: form.value.platform,
+      score: form.value.rating,
       remark: form.value.remark
     })
   }
