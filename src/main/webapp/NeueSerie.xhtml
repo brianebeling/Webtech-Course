@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html lang="de"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:a="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<head>
+	<meta charset="utf-8"/>
+	<link rel="stylesheet" href="Steam2.css"/>
+	<link rel="stylesheet" href="https://use.typekit.net/jfo2joa.css"/>
+	<script src="interaction.js"></script> 
+	<script src="https://kit.fontawesome.com/7096016fc8.js" crossorigin="anonymous"></script>
+	<title>Steam Home</title>
+</head>
+<body>
+	<header>
+		<nav>
+			<div>
+				<a href="index.xhtml" class="logo">STEAM™</a>
+			</div>
+			<div class="search">
+                            <a><i class="fas fa-search"></i></a>
+                            <h:form>
+                            <h:inputText value="#{searchBean.searchText}" a:placeholder="Suche"></h:inputText>
+                            <h:commandButton action="search" styleClass=".hide" ></h:commandButton>
+                            </h:form>
+			</div>
+			<ul class="nav-links">
+				<li><a href="NeueSerie.xhtml" class="bigButton">Neue Serie</a></li>
+				<li><img href="" src="img_avatar.png" alt="Avatar" class="avatar"/></li>
+				<li><a href="#" onClick="openSignIn();" class="textButton">#{loginBean.name}</a></li>
+			</ul>
+		</nav>
+	</header>
+    <h:form>
+	<div class="newSeries">
+		<div class="nSboxHead">
+			<i class="fas fa-arrow-left fa-3x"></i>
+			<a href="index.xhtml">Neue Serie</a>
+		</div>
+            
+                <h:inputText value="#{newSeriesBean.title}" class="nSboxTitle" a:placeholder="Titel"></h:inputText>
+                <h:inputText value="#{newSeriesBean.thumb}" class="nSboxEpisodes" a:placeholder="Thumbnail"></h:inputText>
+                <h:inputText value="#{newSeriesBean.seasons}" class="nSboxSeasons" a:placeholder="Seasons"></h:inputText>
+                <h:selectOneMenu value="#{newSeriesBean.genre}" class="nSboxGenre selection" a:placeholder="Genre">
+                    <f:selectItems value="#{newSeriesBean.GetGenres()}"></f:selectItems>
+                </h:selectOneMenu>
+                <h:selectOneMenu value="#{newSeriesBean.platform}" class="nSboxPlatform selection" a:placeholder="Platform">
+                    <f:selectItems value="#{newSeriesBean.GetPlatforms()}"></f:selectItems>
+                </h:selectOneMenu>
+                <h:selectOneMenu value="#{newSeriesBean.rating}" class="nSboxRating selection" a:placeholder="Rating">
+                    <f:selectItems value="#{newSeriesBean.GetRatings()}"></f:selectItems>
+                </h:selectOneMenu>
+
+                <h:inputTextarea value="#{newSeriesBean.comment}" class="nSboxComment" a:placeholder="Kommentar" cols="40" rows="5"></h:inputTextarea>
+            
+	</div>
+        <div class="nSboxSub"><h:commandLink action="#{newSeriesBean.Create(loginBean.name)}" class="bigButton">Hinzufügen</h:commandLink></div>
+    </h:form>
+	
+	<div class="bg-modal">
+		<div class="modal-content">
+                    <h:form>
+                        <h:inputText value="#{loginBean.userName}" a:placeholder="Benutzername"/>
+                        <h:inputText value="#{loginBean.userPassword}" a:type="password" a:placeholder="Passwort"/>
+			<h:commandLink action="#{loginBean.Login()}" a:onClick="closeSignIn();" class="textButton">Bestätigen</h:commandLink>
+			<a href="#" onClick="closeSignIn();" class="altTextButton">Abbrechen</a>
+			<a href="#" onClick="openCreate(); closeSignIn();" class="altTextButton">Sign Up</a>
+                    </h:form>
+		</div>
+	</div>
+	
+	<div class="cre">
+		<div class="modal-content">
+                    <h:form>
+			<h:inputText value="#{loginBean.userName}" a:placeholder="Benutzername"/>
+                        <h:inputText value="#{loginBean.userPassword}" a:type="password" a:placeholder="Passwort"/>
+                        <h:commandLink action="#{loginBean.Signin()}" class="textButton">Erstellen</h:commandLink>
+			<a href="#" onClick="closeCreate();" class="altTextButton">Abbrechen</a>
+                    </h:form>
+		</div>
+	</div>
+</body>
+</html>

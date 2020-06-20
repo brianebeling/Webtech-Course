@@ -1,11 +1,15 @@
-<!doctype html>
-<html lang="de">
-<head>
+<?xml version='1.0' encoding='UTF-8' ?>
+<!doctype html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml">
+<html lang="de"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+<h:head>
 	<meta charset="utf-8">
 	<script src="js/interaction.js"></script> 
 	<script src="js/steam.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<title>Steam Home</title>
+<<<<<<< HEAD
 </head>
 
 <script>
@@ -67,9 +71,31 @@
         </script>
 </header>
 <body>		
+=======
+</h:head>
+<h:body>
+	<header>
+		<nav>
+			<div>
+				<a href="#" class="logo">STEAM™</a>
+			</div>
+			<div class="search">
+                            <a><i class="fas fa-search"></i></a>
+                            <input value="#{searchBean.searchText}" placeholder="Suche"/>
+			</div>
+			<ul class="nav-links">
+				<li><a href="NeueSerie.html" class="bigButton">Neue Serie</a></li>
+				<li><img src="img_avatar.png" alt="Avatar" class="avatar"></li>
+				<li><a href="#" onClick="openSignIn();" class="textButton">Anmelden</a></li>
+			</ul>
+		</nav>
+	</header>
+	
+>>>>>>> JSF
 	
 	<div class="grid-container">
 	</div> 
+<<<<<<< HEAD
 	<script>
 		document.addEventListener("DOMContentLoaded", function(){
 				getAllSeries().then(out => out.json()).then(res => {
@@ -104,4 +130,26 @@
 
 	</script>
 </body>
+=======
+	
+	<div class="bg-modal">
+		<div class="modal-content">
+			<input type="text" placeholder="Benutzername">
+			<input type="password" placeholder="Passwort">
+			<a href="#" class="textButton">Bestätigen</a>
+			<a href="#" onClick="closeSignIn();" class="altTextButton">Abbrechen</a>
+			<a href="#" onClick="closeSignIn(); openCreate();" class="altTextButton">Sign Up</a>
+		</div>
+	</div>
+	
+	<div class="bg-create">
+		<div class="modal-content">
+			<input type="text" placeholder="Benutzername">
+			<input type="password" placeholder="Passwort">
+			<a href="#" class="textButton">Erstellen</a>
+			<a href="#" onClick="closeCreate();" class="altTextButton">Abbrechen</a>
+		</div>
+	</div>
+</h:body>
+>>>>>>> JSF
 </html>
