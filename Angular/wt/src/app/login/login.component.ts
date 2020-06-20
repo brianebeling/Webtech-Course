@@ -34,7 +34,9 @@ export class LoginComponent implements OnInit {
 
   SignIn()
   {
-    this.seriesService.login(this.userName, this.userPassword);
-    this.show=false;
+    this.seriesService.login(this.userName, this.userPassword).subscribe((res) => {
+      
+      this.show=false;
+    });
   }
 }
