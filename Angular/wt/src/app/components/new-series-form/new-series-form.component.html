@@ -1,0 +1,34 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit(form)">
+    
+    <label>
+        Title:
+        <input formControlName="title" placeholder="">    
+    </label>
+    
+    <label>
+        Seasons:
+        <input formControlName="seasons" placeholder="">    
+    </label>
+    
+    <label>
+        Genre:
+        <input formControlName="genre" placeholder="">    
+    </label>
+    
+    <label>
+        Platform:
+        <input formControlName="platform" placeholder="">    
+    </label>
+    
+    <label>
+        Rating:
+        <input formControlName="rating" placeholder="">    
+    </label>
+    
+    <label>
+        Remark:
+        <input formControlName="remark" placeholder="">    
+    </label>
+  
+    <button type="submit">Hinzufügen</button>
+  </form>
