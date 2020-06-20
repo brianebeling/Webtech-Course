@@ -1,0 +1,136 @@
+.nSboxComment{
+	grid-area: comment;
+	height: 200px;
+}
+.nSboxSub{
+	height: 36px;
+	font-size: 14px;
+	float: left;
+	margin-left: 380px;
+	margin-top: 25px;
+}
+
+.newSeries input{
+	background: rgba(0,0,0,0.00);
+	color: #00000099;
+	border-radius: 4px;
+	margin-top: 0px;
+	margin-left: 0px;
+	padding: 17px;
+	border: solid 1px rgba(0,0,0,0.25);
+	float: left;
+	text-align: left;
+	font-size: 16px;
+}
+
+
+
+.newSeries textarea{
+	background: rgba(0,0,0,0.00);
+	color: #00000099;
+	border-radius: 4px;
+	margin-top: 0px;
+	margin-left: 0px;
+	padding: 17px;
+	border: solid 1px rgba(0,0,0,0.25);
+	float: left;
+	text-align: left;
+	font-family: roboto, sans-serif;
+	font-size: 16px;
+	resize: none;
+}
+
+.newSeries i{
+	background-size: 5px;
+}
+
+.newSeries a{
+	
+	margin-left: 20px;
+	text-decoration: none;
+	color: #000000;
+}
+
+.nSboxHead{
+	grid-area: header;
+	height: 100px;
+}
+.nSboxHead a{
+	font-size: 48px;
+}
+.nSboxTitle{
+	grid-area: title;
+        height: 25px;
+}
+.nSboxSeasons{
+	grid-area: seasons;
+        height: 25px;
+}
+.nSboxEpisodes{
+	grid-area: episodes;
+        height: 25px;
+}
+.nSboxGenre{
+	grid-area: genre;
+        height: 25px;
+}
+.nSboxPlatform{
+	grid-area: platform;
+        height: 25px;
+}
+.nSboxRating{
+	grid-area: rating;
+        height: 25px;
+}
+.ratingButton{
+	background: rgba(0,0,0,0.00);
+	color: #00000055;
+	border-radius: 4px;
+	margin-top: 0px;
+	margin-left: 0px;
+	padding: 17px;
+	border: solid 1px rgba(0,0,0,0.25);
+	float: left;
+	text-align: left;
+	font-size: 16px;
+	width: 100%;
+}
+.rating-dropdown-content {
+	display: none;
+	position: absolute;
+	background-color: #FFFFFF;
+	width: 100%;
+	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+	z-index: 1;
+	
+}
+.rating-dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+/* Change color of dropdown links on hover */
+.rating-dropdown-content a:hover {
+	background-color: #ddd;
+}
+
+.newSeries {
+	
+	white-space: nowrap;
+	padding-top: 100px;
+	padding-left: 40px;
+	display: grid;
+	grid-gap: 15px;
+	grid-template-columns: 250px 250px;
+	grid-template-rows: auto;
+	grid-template-areas: 
+		"header header" 
+		"title title "
+		"episodes seasons"
+		"genre genre"
+		"platform platform"
+		"rating rating"
+		"comment comment"
+		"none submit"
+}

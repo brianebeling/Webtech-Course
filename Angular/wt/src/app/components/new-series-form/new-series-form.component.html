@@ -1,0 +1,27 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit(form)">
+<div class="newSeries">
+		<div class="nSboxHead">
+			<i class="fas fa-arrow-left fa-3x"></i>
+            <a href="index.html">Neue Serie</a>
+		</div>
+
+
+        <input class="nSboxTitle" formControlName="title" placeholder="Titel">    
+
+
+        <input class="nSboxSeasons" formControlName="seasons" placeholder="Anzahl der Seasons">    
+
+
+        <input class="nSboxGenre" formControlName="genre" placeholder="Genre">    
+
+        <input class="nSboxPlatform" formControlName="platform" placeholder="Platform">    
+
+        <input class="nSboxRating" formControlName="rating" placeholder="Rating">    
+
+        <input class="nSboxComment" formControlName="remark" placeholder="Kommentar">    
+
+  
+    <button type="submit">Hinzufügen</button>
+  
+</div>
+</form>
