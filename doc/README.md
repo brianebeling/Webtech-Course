@@ -20,6 +20,7 @@ Ich habe die Wireframes gezeichnet und die html und css dateien geschrieben, so 
 
 #### Aufgabe 2
 
+Von der 2. Pflichtaufgabe habe ich den JSF teil übernommen und wir haben zusammen den Angular Teil übernommen.
 
 ## Wie startet man das Projekt?
 
@@ -28,3 +29,4 @@ Ich habe die Wireframes gezeichnet und die html und css dateien geschrieben, so 
 ### JS
 
 ### Angular
+

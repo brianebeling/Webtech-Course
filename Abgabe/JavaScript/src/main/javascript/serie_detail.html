@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="de">
+<head>
+	<meta charset="utf-8">
+	<script src="js/interaction.js"></script> 
+	<script src="js/steam.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<title>Steam - Detail</title>
+</head>
+<script>
+	$(function() {
+    	$("#navigation").load("navigation.html");
+	});
+</script>
+<header>
+	<div id="navigation"></div>
+</header>
+<body>	
+	<div>
+		<div class="detailGrid">
+			<div class="dtHead">
+				<i class="fas fa-arrow-left fa-3x"></i>
+				<a class="dtHeadText" href="index.html"></a>
+			</div>
+			<a class="dtSea">Seasons</a>
+			<a class="dtSeaV"></a>
+			<a class="dtGen">Genre</a>
+			<a class="dtGenV"></a>
+			<a class="dtPla">Platform</a>
+			<a class="dtPlaV"></a>
+			<a class="dtRat">Rating</a>
+			<a class="dtRatV"></a>
+			<a class="dtCom">Kommentar</a> 
+			<a class="dtComV"></a> 
+ 			<!-- <div class="dtEdit"><div><a href="#" class="bigButton">Bearbeiten</a></div></div> -->
+ 		</div>
+	</div>
+	
+	<script>
+		
+		let url2 = new URL(window.location.href);
+		let searchParams = new URLSearchParams(url2.search);
+
+		if (searchParams.has('title'))
+		{			
+			let title = searchParams.get('title');
+			let seriesData = getAllSeriesWithTitle(title);
+
+			seriesData.then(res => res.json())
+			.then((out) =>
+			{
+				let series = out[0];
+
+				if (series == null)
+				{
+					return;
+				}
+
+				console.log(series);
+
+				document.getElementsByClassName('dtSeaV')[0].innerHTML = series.numberOfSeasons;
+				document.getElementsByClassName('dtGenV')[0].innerHTML = series.genre;
+				document.getElementsByClassName('dtPlaV')[0].innerHTML = series.streamedBy;
+				document.getElementsByClassName('dtHeadText')[0].innerHTML = series.title;
+				
+				document.getElementsByClassName('dtRatV')[0].innerHTML = '-';
+				getRating(title).then(res => res.json()).then(out => {
+					console.log(out);
+					document.getElementsByClassName('dtRatV')[0].innerHTML = out.score;
+					document.getElementsByClassName('dtComV')[0].innerHTML = out.remark;
+				});
+				
+
+			});
+		}
+
+	</script>
+</body>
+</html>

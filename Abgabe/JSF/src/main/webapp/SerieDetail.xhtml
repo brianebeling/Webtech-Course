@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html lang="de"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:a="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+<h:head>
+	<meta charset="utf-8"/>
+	<link rel="stylesheet" href="Steam2.css"/>
+	<link rel="stylesheet" href="https://use.typekit.net/jfo2joa.css"/>
+	<script src="interaction.js"></script> 
+	<script src="https://kit.fontawesome.com/7096016fc8.js" crossorigin="anonymous"></script>
+<title>SerieDetail</title>
+</h:head>
+<h:body>
+	
+	<header>
+		<nav>
+			<div>
+				<a href="index.xhtml" class="logo">STEAM™</a>
+			</div>
+			<div class="search">
+                            <a><i class="fas fa-search"></i></a>
+                            <h:form>
+                            <h:inputText value="#{searchBean.searchText}" a:placeholder="Suche"></h:inputText>
+                            <h:commandButton action="search" styleClass=".hide" ></h:commandButton>
+                            </h:form>
+			</div>
+			<ul class="nav-links">
+				<li><a href="NeueSerie.xhtml" class="bigButton">Neue Serie</a></li>
+				<li><img href="" src="img_avatar.png" alt="Avatar" class="avatar"/></li>
+				<li><a href="#" onClick="openSignIn();" class="textButton">#{loginBean.name}</a></li>
+			</ul>
+		</nav>
+	</header>
+	
+	<div class="details">
+		<img src="Thumbs/1.png" alt="Banner"/>
+	</div>
+	
+	<div>
+		<div class="detailGrid">
+			<div class="dtHead">
+				<i class="fas fa-arrow-left fa-3x"></i>
+				<a class="dtHeadText" href="index.xhtml">#{selectSeriesBean.ser.title}</a>
+			</div>
+			<a class="dtEpi">Folgen</a>
+                        <a class="dtEpiV">12</a>
+			<a class="dtSea">Seasons</a>
+                        <a class="dtSeaV">#{selectSeriesBean.ser.numberOfSeasons}</a>
+			<a class="dtGen">Genre</a>
+			<a class="dtGenV">#{selectSeriesBean.ser.genre}</a>
+			<a class="dtPla">Platform</a>
+			<a class="dtPlaV">#{selectSeriesBean.ser.streamedBy}</a>
+			<a class="dtRat">Rating</a>
+			<a class="dtRatV">#{selectSeriesBean.GetRating(loginBean.name)}</a>
+			<a class="dtCom">Kommentar</a> 
+                        <a class="dtComV">#{selectSeriesBean.GetComment(loginBean.name)}</a>
+                        <div class="dtEdit">
+                            <div>
+                                <h:form>
+                                    <h:commandLink action="#{newSeriesBean.Modify(selectSeriesBean.ser.title, selectSeriesBean.ser.genre, selectSeriesBean.ser.streamedBy, selectSeriesBean.GetRating(loginBean.name), selectSeriesBean.GetComment(loginBean.name))}" class="bigButton">Bearbeiten</h:commandLink>
+                                </h:form>
+                            </div>
+                        </div>
+		</div>
+	</div>
+	
+	<div class="bg-modal">
+		<div class="modal-content">
+                    <h:form>
+                        <h:inputText value="#{loginBean.userName}" a:placeholder="Benutzername"/>
+                        <h:inputText value="#{loginBean.userPassword}" a:type="password" a:placeholder="Passwort"/>
+			<h:commandLink action="#{loginBean.Login()}" a:onClick="closeSignIn();" class="textButton">Bestätigen</h:commandLink>
+			<a href="#" onClick="closeSignIn();" class="altTextButton">Abbrechen</a>
+			<a href="#" onClick="openCreate(); closeSignIn();" class="altTextButton">Sign Up</a>
+                    </h:form>
+		</div>
+	</div>
+	
+	<div class="cre">
+		<div class="modal-content">
+                    <h:form>
+			<h:inputText value="#{loginBean.userName}" a:placeholder="Benutzername"/>
+                        <h:inputText value="#{loginBean.userPassword}" a:type="password" a:placeholder="Passwort"/>
+                        <h:commandLink action="#{loginBean.Signin()}" class="textButton">Erstellen</h:commandLink>
+			<a href="#" onClick="closeCreate();" class="altTextButton">Abbrechen</a>
+                    </h:form>
+		</div>
+	</div>
+</h:body>
+</html>
