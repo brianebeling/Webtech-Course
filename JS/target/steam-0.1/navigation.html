@@ -1,0 +1,73 @@
+<nav>
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="https://use.typekit.net/jfo2joa.css">
+	<script src="https://kit.fontawesome.com/7096016fc8.js" crossorigin="anonymous"></script>
+
+    <div>
+        <a href="index.html" class="logo">STEAM™</a>
+    </div>
+    
+    <div class="search">
+        <a><i class="fas fa-search" aria-hidden="true"></i></a>
+        <input type="text" placeholder="Suche">
+    </div>
+
+    </div>
+    <ul class="nav-links">
+        <li><a href="new_series.html" class="bigButton">Neue Serie</a></li>
+<!--         <li><img src="img_avatar.png" alt="Avatar" class="avatar"></li>
+ -->		<li><a id="sign-in-open-button" href="#" onClick="openSignIn();" class="textButton">Anmelden</a></li>
+		<script>
+			if (isLoggedIn())
+			{
+				document.getElementById('sign-in-open-button').innerHTML = sessionStorage.getItem('sessionUser');
+			}
+		</script>
+	</ul>
+	
+
+
+
+    <div id="sign-in-modal" class="bg-modal">
+		<div class="modal-content">
+			<input id="login-username-input" type="text" placeholder="Benutzername">
+			<input id="login-password-input" type="password" placeholder="Passwort">
+			<a href="#" id="login-button-confirm" class="textButton">Bestätigen</a>
+			<script>
+				var button = document.getElementById('login-button-confirm');
+				button.onclick = function(){
+					var loginValue = document.getElementById("login-username-input").value;
+					var passwordValue = document.getElementById("login-password-input").value;
+
+					login(loginValue, passwordValue).then((res) => {
+						console.log(res);
+						location.reload();
+					 });
+				};
+			</script>
+			<a href="#" onClick="closeSignIn();" class="altTextButton">Abbrechen</a>
+			<a href="#" onClick="closeSignIn(); openCreate();" class="altTextButton">Sign Up</a>
+		</div>
+	</div>
+	
+	<div id="sign-up-modal" class="bg-modal-sign-up">
+		<div class="modal-content">
+			<input id="signup-username-input" type="text" placeholder="Benutzername">
+			<input id="signup-password-input" placeholder="Passwort">
+			<a href="#" id="signup-button-confirm" class="textButton">Erstellen</a>
+			<script>
+				var button = document.getElementById('signup-button-confirm');
+				button.onclick = function(){
+					var login = document.getElementById("signup-username-input").value;
+					var password = document.getElementById("signup-password-input").value;
+
+					signup(loginValue, passwordValue).then((res) => {
+						console.log(res);
+						location.reload();
+					 });
+				};
+			</script>
+			<a href="#" onClick="closeCreate();" class="altTextButton">Abbrechen</a>
+		</div>
+	</div>
+</nav>

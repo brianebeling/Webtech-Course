@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="de">
+<head>
+	<meta charset="utf-8">
+	<script src="js/interaction.js"></script> 
+	<script src="js/steam.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<title>Steam Home</title>
+</head>
+
+<script>
+	$.ajaxSetup({
+		cache: false
+	});
+	$(function() {
+    	$("#navigation").load("navigation.html");
+	});
+</script>
+<header>
+	<div id="navigation"></div>
+	<div class="search">
+		<div class="search_dropdown">
+			<label for="genre">Genre:</label>
+			<select name="genre" id="genreDD">
+				<option value="ScienceFiction">Science Fiction</option>
+				<option value="Drama">Drama</option>
+				<option value="Action">Action</option>
+                <option value="Comedy">Comedy</option>
+                <option value="Documentary">Dokumentation</option>
+			</select>
+        </div>
+        <div class="search_dropdown">
+			<label for="provider">Platform:</label>
+			<select name="provider" id="providerDD">
+				<option value="Netflix">Netflix</option>
+				<option value="AmazonPrime">Amazon Prime</option>
+				<option value="Skye">Skye</option>
+			</select>
+        </div>
+        <div class="search_dropdown">
+			<label for="score">Score:</label>
+			<select name="score" id="scoreDD">
+				<option value="very_good">Sehr Gut</option>
+				<option value="good">Gut</option>
+				<option value="mediocre">Mittelmäßig</option>
+                <option value="bad">Schlecht</option>
+			</select>
+        </div>
+        <li><button onclick="filter()" class="bigButton">Suchen</button></li>
+        <script>
+            function filter()
+            {
+                let genreDD = document.getElementById('genreDD');
+                let genre = genreDD.options[genreDD.selectedIndex].value;
+                let providerDD = document.getElementById('providerDD');
+                let provider = providerDD.options[providerDD.selectedIndex].value;
+                let scoreDD = document.getElementById('scoreDD');
+                let score = scoreDD.options[scoreDD.selectedIndex].value;
+
+                search(genre, provider, score).then((out) => out.json()).then((res) => 
+                {
+					console.log(res);
+					clearThumbs();
+					createThumbs(res);
+                });
+            }
+        </script>
+</header>
+<body>		
+	
+	<div class="grid-container">
+	</div> 
+	<script>
+		document.addEventListener("DOMContentLoaded", function(){
+				getAllSeries().then(out => out.json()).then(res => {
+				console.log(res);
+				createThumbs(res);
+			});
+		});
+
+		function clearThumbs()
+		{
+			document.getElementsByClassName('grid-container')[0].innerHTML = "";
+
+		}
+		function createThumbs(data)
+		{
+			data.forEach(element => {
+				console.log(element);
+				var a = document.createElement('a');
+				var thumb = document.createElement('img');
+				
+				a.appendChild(thumb);
+				a.href = ('serie_detail.html?title=' + element.title);
+
+				thumb.src = 'Thumbs/1.png';
+				thumb.className = 'grid-item';
+				thumb.alt = 'Thumbnail';
+
+				console.log(thumb);
+				document.getElementsByClassName('grid-container')[0].appendChild(a);
+			});
+		}
+
+	</script>
+</body>
+</html>
