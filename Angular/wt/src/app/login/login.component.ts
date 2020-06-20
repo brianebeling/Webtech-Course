@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SeriesService } from 'src/app/services/series.service';
+import { FormGroup, FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
@@ -8,6 +9,8 @@ import { SeriesService } from 'src/app/services/series.service';
 })
 export class LoginComponent implements OnInit {
 
+  form: FormGroup;
+
   userName:string;
   userPassword:string;
   public show:boolean = true;
@@ -15,9 +18,20 @@ export class LoginComponent implements OnInit {
   constructor(private seriesService : SeriesService) { }
 
   ngOnInit(): void {
+    this.form = new FormGroup({
+      userName: new FormControl(),
+      userPassword: new FormControl()
+    })
   }
 
-  
+  onSubmit(form: FormGroup) {
+    this.SignIn();
+  }
+
+  getName():string{
+    return this.userName;
+  }
+
   SignIn()
   {
     this.seriesService.login(this.userName, this.userPassword);
