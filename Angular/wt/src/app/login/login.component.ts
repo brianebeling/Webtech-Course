@@ -35,8 +35,10 @@ export class LoginComponent implements OnInit {
   SignIn()
   {
     this.seriesService.login(this.userName, this.userPassword).subscribe((res) => {
-      
-      this.show=false;
+      if (res.ok)
+      {
+        this.show=false;
+      }
     });
   }
 }
