@@ -1,0 +1,11 @@
+
+<div class="bg-modal" *ngIf="show">
+    <div class="modal-content">
+        <input type="text" placeholder="Benutzername">
+        <input type="password" placeholder="Passwort">
+        <button class="textButton" (click)="SignIn()">Bestätigen</button>
+        <a href="#" onClick="closeSignIn();" class="altTextButton">Abbrechen</a>
+        <a href="#" onClick="closeSignIn(); openCreate();" class="altTextButton">Sign Up</a>
+    </div>
+</div>
+
