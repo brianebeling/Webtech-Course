@@ -2,22 +2,36 @@
 
 ## Arbeitsaufteilung
 
-Brian-Julian Ebeling
-1530505
+### Brian-Julian Ebeling 1530505
+
+#### Aufgabe 1
 
 Ich habe quasi alles gemacht was mit Backend zu tun hatte. REST, Design, Testing und implementierung dieser. Außerdem hab ich noch das Design von der Website übernommen.
 
-Kai Bennet Lindow 
-1433861
+#### Aufgabe 2
+
+Von der 2. Pflichtaufgabe, habe ich den Javascript Teil übernommen und wir haben beide zusammen an Angular gearbeitet. An einigen Stellen mussten wir leider Abstriche vornehmen, damit wir das Projekt zeitlich schaffen konnten. 
+
+### Kai Bennet Lindow 1433861
+
+#### Aufgabe 1
 
 Ich habe die Wireframes gezeichnet und die html und css dateien geschrieben, so dass es den Designvorlagen entspricht.
 
-## Testing
+#### Aufgabe 2
 
-Getestet wurde das Projekt durch den Export der API in das Swagger 2.0 spec format und anschließend umgwewandelt in OpenAPI specs. Diese wurden in Postman implementiert und konnten dort einfach und bequen mit den von Postman generierten Tests und CURL befehlen via. Trial and Error getestet werden.
+Von der 2. Pflichtaufgabe habe ich den JSF teil übernommen und wir haben zusammen den Angular Teil übernommen.
 
-Außerdem hab ich von dort die JSON Beispiele exportiert. 
+## Wie startet man das Projekt?
 
-Die Swagger 2.0 specs können via localhost:8080/steam/resources/swagger.json aufgerufen werden und werden dynamisch generiert.
+### JSF
+- JSF Projekt in NetBeans öffnen rechtsklick auf steam-0.1->Web Pages->index.xhtml -> Run File
 
-Als Server hab ich Glassfish ausgewählt, mit der JDK 8.
+### JS
+- JavaScript Neatbeans Projekt öffnen und starten
+- localhost:8080/JavaScript/index.html
+
+### Angular
+- JavaScript Neatbeans Projekt öffnen und starten
+- Danach kann man einfach 'ng serv --open' in dem Angular Projekt eingeben und es sollte funktionieren
+
