@@ -25,6 +25,7 @@ Von der 2. Pflichtaufgabe habe ich den JSF teil übernommen und wir haben zusamm
 ## Wie startet man das Projekt?
 
 ### JSF
+- JSF Projekt in NetBeans öffnen rechtsklick auf steam-0.1->Web Pages->index.xhtml -> Run File
 
 ### JS
 - JavaScript Neatbeans Projekt öffnen und starten
