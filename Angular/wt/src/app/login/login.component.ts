@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SeriesService } from 'src/app/services/series.service';
 
 @Component({
   selector: 'app-login',
@@ -11,7 +12,7 @@ export class LoginComponent implements OnInit {
   userPassword:string;
   public show:boolean = true;
 
-  constructor() { }
+  constructor(private seriesService : SeriesService) { }
 
   ngOnInit(): void {
   }
@@ -19,6 +20,7 @@ export class LoginComponent implements OnInit {
   
   SignIn()
   {
+    this.seriesService.login(this.userName, this.userPassword);
     this.show=false;
   }
 }
