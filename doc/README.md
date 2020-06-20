@@ -27,6 +27,10 @@ Von der 2. Pflichtaufgabe habe ich den JSF teil übernommen und wir haben zusamm
 ### JSF
 
 ### JS
+- JavaScript Neatbeans Projekt öffnen und starten
+- localhost:8080/JavaScript/index.html
 
 ### Angular
+- JavaScript Neatbeans Projekt öffnen und starten
+- Danach kann man einfach 'ng serv --open' in dem Angular Projekt eingeben und es sollte funktionieren
 
