@@ -11,7 +11,7 @@ Ich habe quasi alles gemacht was mit Backend zu tun hatte. REST, Design, Testing
 
 ### Aufgabe 2
 
-Kai Bennet Lindow 
+##Kai Bennet Lindow 
 1433861
 
 ### Aufgabe 1
@@ -20,6 +20,7 @@ Ich habe die Wireframes gezeichnet und die html und css dateien geschrieben, so 
 
 ### Aufgabe 2
 
+von der 2. Pflichtaufgabe habe ich den JSF teil übernommen und wir haben zusammen den Angular Teil übernommen.
 
 ## Testing
 
