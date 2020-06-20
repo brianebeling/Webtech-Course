@@ -12,9 +12,16 @@ export class SeriesService {
 
   url = new URL("http://localhost:8080/steam/resources/");
 
+  username: string;
+
+  login(username : string, password : string)
+  {
+    return this.http.post(this.url + 'users/' + this.username + 'login', { password: password });
+  }
+
   addOrModifySeries(seriesData: ISeriesData)
   {
-    return this.http.get(this.url + 'series?username=')
+    return this.http.post(this.url + 'series?username=' + this.username, seriesData);
   }
 }
 
