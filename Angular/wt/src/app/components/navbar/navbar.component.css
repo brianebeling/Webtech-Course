@@ -108,3 +108,73 @@ nav{
 	margin-top: 50%;
 	margin-left: 10px;
 }
+
+.textButton {	
+	font-size: 14px;
+	text-decoration: none;
+	text-align: center;
+	letter-spacing: 1.25px;
+	color: #6200EE;
+	text-transform: uppercase;
+	background: #00000000;
+	border: none;
+}
+
+.textButton:hover {
+	color: #7413FF;
+}
+
+.altTextButton {	
+	font-size: 14px;
+	text-decoration: none;
+	text-align: center;
+	letter-spacing: 1.25px;
+	color: #747474;
+	text-transform: uppercase;
+	background: #00000000;
+	border: none;
+}
+
+.altTextButton:hover {
+	color: #999999;
+}
+.bigButton {	
+	text-align: center;
+	font: Medium 14px/17px Roboto;
+	letter-spacing: 1.25px;
+	color: #FFFFFF;
+	text-transform: uppercase;
+	opacity: 1;
+	
+	background: #6200EE;
+	box-shadow: 0px 1px 3px #00000033;
+	border-radius: 4px;
+	padding: 8px 13px;
+	margin-right: 50px;
+	margin-left: 50px;
+	white-space: nowrap;
+	font-size: 14px;
+	text-decoration: none;
+}
+
+.bigButton:hover {
+	color: #FFFFFF;
+	background-color: #7413FF;
+}
+
+.bigButtonMute {	
+	text-align: center;
+	font: Medium 14px/17px Roboto;
+	letter-spacing: 1.25px;
+	color: #8B8B8B;
+	text-transform: uppercase;
+	opacity: 1;
+	
+	background: #E0E0E0;
+	box-shadow: 0px 1px 3px #00000033;
+	border-radius: 4px;
+	padding: 8px 13px;
+	margin-right: 50px;
+	margin-left: 50px;
+	white-space: nowrap;
+}
