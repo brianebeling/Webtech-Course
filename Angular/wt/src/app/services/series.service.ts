@@ -28,7 +28,7 @@ export class SeriesService {
 export interface ISeriesData
 {
   title: string;
-  season: number;
+  seasons: number;
   genre: string;
   platform: string;
   rating: number;
