@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 TRANSITIONAL//EN" "http://www.w3.org/TR/xhtml">
+<html lang="de"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:a="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+	<meta charset="utf-8"/>
+	<link rel="stylesheet" href="Steam2.css"/>
+	<link rel="stylesheet" href="https://use.typekit.net/jfo2joa.css"/>
+	<script src="interaction.js"></script> 
+	<script src="https://kit.fontawesome.com/7096016fc8.js" crossorigin="anonymous"></script>
+	<title>Steam Home</title>
+</h:head>
+<h:body>
+	<header>
+		<nav>
+			<div>
+				<a href="#" class="logo">STEAM™</a>
+			</div>
+                        <h:form>
+                            <div class="searchBar">
+                            <h:selectOneMenu value="#{searchBean.genre}" styleClass="selectionSearch" a:placeholder="Genre">
+                                <f:selectItem value="#{null}"></f:selectItem>
+                                <f:selectItems value="#{searchBean.GetGenres()}"></f:selectItems>
+                            </h:selectOneMenu>
+                            <h:selectOneMenu value="#{searchBean.platform}" styleClass="selectionSearch" a:placeholder="Genre">
+                                <f:selectItem value="#{null}"></f:selectItem>
+                                <f:selectItems value="#{searchBean.GetPlatforms()}"></f:selectItems>
+                            </h:selectOneMenu>
+                            <h:selectOneMenu value="#{searchBean.rating}" styleClass="selectionSearch" a:placeholder="Genre">
+                                <f:selectItem value="#{null}"></f:selectItem>
+                                <f:selectItems value="#{searchBean.GetRatings()}"></f:selectItems>
+                            </h:selectOneMenu>
+                            <h:commandLink action="#{searchBean.Search()}" value="    Suchen" styleClass="altTextButton"></h:commandLink>
+                            </div>
+                            </h:form>
+			<ul class="nav-links">
+                            
+                            <li><a href="NeueSerie.xhtml" class="bigButton">Neue Serie</a></li>
+                            <li><img href="" src="img_avatar.png" alt="Avatar" class="avatar"/></li>
+                            <li><a href="#" onClick="openSignIn();" class="textButton">#{loginBean.name}</a></li>
+			</ul>
+		</nav>
+	</header>
+	
+	
+	<div class="grid-container">
+            <c:forEach items="#{searchBean.GetSearchedSeries(loginBean.name)}" var="s">
+                <h:form styleClass="grit-item">
+                    <h:commandButton action="#{selectSeriesBean.SelectSeries(s)}" image="Thumbs/#{s.title}.png" styleClass="clampGridImage" a:alt="#{s.title}"></h:commandButton>
+                </h:form>
+            </c:forEach>
+		
+	</div> 
+	
+	<div class="bg-modal">
+		<div class="modal-content">
+                    <h:form>
+                        <h:inputText value="#{loginBean.userName}" a:placeholder="Benutzername"/>
+                        <h:inputText value="#{loginBean.userPassword}" a:type="password" a:placeholder="Passwort"/>
+			<h:commandLink action="#{loginBean.Login()}" a:onClick="closeSignIn();" class="textButton">Bestätigen</h:commandLink>
+			<a href="#" onClick="closeSignIn();" class="altTextButton">Abbrechen</a>
+			<a href="#" onClick="openCreate(); closeSignIn();" class="altTextButton">Sign Up</a>
+                    </h:form>
+		</div>
+	</div>
+	
+	<div class="cre">
+		<div class="modal-content">
+                    <h:form>
+			<h:inputText value="#{loginBean.userName}" a:placeholder="Benutzername"/>
+                        <h:inputText value="#{loginBean.userPassword}" a:type="password" a:placeholder="Passwort"/>
+                        <h:commandLink action="#{loginBean.Signin()}" class="textButton">Erstellen</h:commandLink>
+			<a href="#" onClick="closeCreate();" class="altTextButton">Abbrechen</a>
+                    </h:form>
+		</div>
+	</div>
+</h:body>
+</html>

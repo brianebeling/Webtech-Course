@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="de">
+<head>
+	<meta charset="utf-8">
+	<script src="js/interaction.js"></script> 
+	<script src="js/steam.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<title>Steam - Neue Serie</title>
+</head>
+<script>
+	$(function() {
+    	$("#navigation").load("navigation.html");
+	});
+</script>
+<header>
+	<div id="navigation"></div>
+</header>
+<body>
+	<div class="newSeries">
+		<div class="nSboxHead">
+			<i class="fas fa-arrow-left fa-3x"></i>
+			<a href="index.html">Neue Serie</a>
+		</div>
+		<input id="add-series-title-input" class="nSboxTitle" type="text" placeholder="Titel">
+		<input id="add-series-episodes-input" class="nSboxEpisodes" type="text"  placeholder="Anzahl der Folgen">
+		<input id="add-series-seasons-input" class="nSboxSeasons" type="text"  placeholder="Anzahl der Seasons">
+		<div class="nSboxGenre">
+			<button id="add-series-genre-button" class="genreButton" onClick="openGenre()">Genre</button>
+			<div class="genre-dropdown-content">
+				<a href="#" onClick="setGenre('Thriller'); closeGenre();">Thriller</a>
+				<a href="#" onClick="setGenre('Science Fiction'); closeGenre()">Science Fiction</a>
+				<a href="#" onClick="setGenre('Drama'); closeGenre()">Drama</a>
+				<a href="#" onClick="setGenre('Action'); closeGenre();">Action</a>
+				<a href="#" onClick="setGenre('Comedy'); closeGenre()">Comedy</a>
+				<a href="#" onClick="setGenre('Dokumentation'); closeGenre()">Dokumentation</a>
+			</div>
+			<script>
+				function setGenre(genreValue)
+				{				
+					let el = document.getElementById('add-series-genre-button');
+					el.innerHTML = genreValue;
+				}
+			</script>
+		</div>			<div class="nSboxPlatform">
+			<button id="add-series-platform-button" class="platformButton" onClick="openPlatform()">Platform</button>
+			<div class="platform-dropdown-content">
+				<a href="#" onClick="setPlatform('Netflix'); closePlatform();">Netflix</a>
+				<a href="#" onClick="setPlatform('Amazon Prime'); closePlatform()">Amazon Prime</a>
+				<a href="#" onClick="setPlatform('Skye'); closePlatform()">Skye</a>
+			</div>
+			<script>
+				function setPlatform(platformValue)
+				{				
+					let el = document.getElementById('add-series-platform-button');
+					el.innerHTML = platformValue;
+				}
+			</script>
+		</div>		
+		<div class="nSboxRating">
+			<button id="add-series-rating-button" class="ratingButton" onClick="openRating()">Rating</button>
+			<div class="rating-dropdown-content">
+				<a href="#" onClick="setRating('Sehr Gut'); closeRating();">Sehr Gut</a>
+				<a href="#" onClick="setRating('Gut'); closeRating()">Gut</a>
+				<a href="#" onClick="setRating('Mittelmäßig'); closeRating()">Mittelmäßig</a>
+				<a href="#" onClick="setRating('Schlecht'); closeRating()">Schlecht</a>
+			</div>
+			<script>
+				function setRating(ratingValue)
+				{
+					let el = document.getElementById('add-series-rating-button');
+					el.innerHTML = ratingValue;
+				}
+			</script>
+		</div>
+		<textarea id="add-series-remark-input" class="nSboxComment" placeholder="Kommentar" cols="40" rows="5"></textarea>
+	</div>
+	<div class="nSboxSub"><button id="add-series-button-confirm" href="#" class="bigButton">Hinzufügen</button></div>
+	<script>
+		var button = document.getElementById('add-series-button-confirm');
+		button.onclick = function(){
+			var title = document.getElementById('add-series-title-input').value;
+			var episodes = document.getElementById('add-series-episodes-input').value;
+			var seasons = document.getElementById('add-series-seasons-input').value;
+			var genre = document.getElementById('add-series-genre-button').innerHTML;
+			var platform = document.getElementById('add-series-platform-button').innerHTML;
+			var rating = document.getElementById('add-series-rating-button').innerHTML;
+			var remark = document.getElementById('add-series-remark-input').value;
+			
+			switch(genre) {
+				case 'Thriller':
+					genre = 'Thriller';
+					break;
+				case 'Science Fiction':
+					genre = 'ScienceFiction';
+					break;
+				case 'Drama':
+					genre = 'Drama';
+					break;
+				case 'Action':
+					genre = 'Action';
+					break;
+				case 'Comedy':
+					genre = 'Comedy';
+					break;
+				case 'Dokumentation':
+					genre = 'Documentary';
+					break;
+				default:
+					genre = "";
+			}
+
+			switch(platform) {
+				case 'Netflix':
+					platform = 'Netflix';
+					break;
+				case 'Amazon Prime':
+					platform = 'AmazonPrime';
+					break;
+				case 'Skye':
+					platform = 'Skye';
+					break;
+				default:
+					genre = "";
+			} 
+
+			switch(rating) {
+				case 'Sehr Gut':
+					rating = 'very_good';
+					break;
+				case 'Gut':
+					rating = 'good';
+					break;
+				case 'Mittelmäßig':
+					rating = 'mediocre';
+					break;
+				case 'Schlecht':
+					rating = 'bad';
+					break;
+				default:
+					genre = "";
+			} 
+
+			var seriesData = {
+				title: title,
+				numberOfSeasons: seasons,
+				genre: genre,
+				streamingProvider: platform,
+				Score: rating,
+				Remark: remark
+			};
+
+			console.log(seriesData);
+			addOrModifySeries(seriesData).then(location.replace('index.html'));
+
+
+		};
+	</script>
+</body>
+</html>

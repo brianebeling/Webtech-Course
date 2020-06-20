@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    <Remark>string</Remark>
+    <Score>bad</Score>
+    <genre>Thriller</genre>
+    <numberOfSeasons>0</numberOfSeasons>
+    <streamingProvider>Netflix</streamingProvider>
+    <title>string</title>
+</root>
