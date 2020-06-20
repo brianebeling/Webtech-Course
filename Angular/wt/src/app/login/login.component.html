@@ -2,12 +2,12 @@
 <div class="bg-modal" *ngIf="show">
     <div class="modal-content">
         <form [formGroup]="form" (ngSubmit)="onSubmit(form)">
-        <input type="text" placeholder="Benutzername" formControlName="userName">
-        <input type="password" placeholder="Passwort" formControlName="userPassword">
-        <button class="textButton" (click)="SignIn()">Bestätigen</button>
-        <a href="#" onClick="closeSignIn();" class="altTextButton">Abbrechen</a>
-        <a href="#" onClick="closeSignIn(); openCreate();" class="altTextButton">Sign Up</a>
-    </form>
+            <input type="text" placeholder="Benutzername" formControlName="userName">
+            <input type="password" placeholder="Passwort" formControlName="userPassword">
+            <button type="submit" class="textButton">Bestätigen</button>
+            <a href="#" class="altTextButton">Abbrechen</a>
+            <a href="#" class="altTextButton">Sign Up</a>
+        </form>
     </div>
 </div>
 

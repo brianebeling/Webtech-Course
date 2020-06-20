@@ -25,20 +25,11 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit(form: FormGroup) {
-    this.SignIn();
-  }
-
-  getName():string{
-    return this.userName;
-  }
-
-  SignIn()
-  {
-    this.seriesService.login(this.userName, this.userPassword).subscribe((res) => {
+    this.seriesService.login(form.value.userName, form.value.userPassword).subscribe((res) => {
       if (res.ok)
       {
         this.show=false;
       }
-    });
+    });  
   }
 }

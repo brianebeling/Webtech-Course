@@ -16,7 +16,8 @@ export class SeriesService {
 
   login(username : string, password : string)
   {
-    return this.http.post(this.url + 'users/' + this.username + 'login', { password: password }, { observe: 'response' });
+    this.username = username;
+    return this.http.post(this.url + 'users/' + this.username + '/login', { password: password }, { observe: 'response' });
   }
 
   addOrModifySeries(seriesData: ISeriesData)
