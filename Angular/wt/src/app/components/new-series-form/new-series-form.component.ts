@@ -1,5 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
+import { SeriesService } from 'src/app/services/series.service';
+
 
 @Component({
   selector: 'app-new-series-form',
@@ -9,7 +11,7 @@ import { FormGroup, FormControl } from '@angular/forms';
 export class NewSeriesFormComponent implements OnInit {
   form : FormGroup;
 
-  constructor() { }
+  constructor(private seriesService : SeriesService) { }
 
   ngOnInit(): void {
     this.form = new FormGroup({
@@ -23,9 +25,13 @@ export class NewSeriesFormComponent implements OnInit {
   }
 
   onSubmit(form: FormGroup) {
-    console.log('Valid?', form.valid); // true or false
-    console.log('Name', form.value.name);
-    console.log('Email', form.value.email);
-    console.log('Message', form.value.message);
+    this.seriesService.addOrModifySeries({
+      title: form.value.title,
+      seasons: form.value.seasons,
+      genre: form.value.genre,
+      platform: form.value.platform,
+      rating: form.value.rating,
+      remark: form.value.remark
+    })
   }
 }
