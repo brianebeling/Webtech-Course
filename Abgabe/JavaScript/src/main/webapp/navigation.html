@@ -58,8 +58,8 @@
 			<script>
 				var button = document.getElementById('signup-button-confirm');
 				button.onclick = function(){
-					var login = document.getElementById("signup-username-input").value;
-					var password = document.getElementById("signup-password-input").value;
+					var loginValue = document.getElementById("signup-username-input").value;
+					var passwordValue = document.getElementById("signup-password-input").value;
 
 					signup(loginValue, passwordValue).then((res) => {
 						console.log(res);
