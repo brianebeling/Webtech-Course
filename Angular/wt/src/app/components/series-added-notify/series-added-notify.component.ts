@@ -3,11 +3,11 @@ import { SeriesService } from 'src/app/services/series.service';
 import { FormGroup, FormControl } from '@angular/forms';
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  selector: 'app-series-added-notify',
+  templateUrl: './series-added-notify.component.html',
+  styleUrls: ['./series-added-notify.component.css']
 })
-export class LoginComponent implements OnInit {
+export class SeriesAddedNotifyComponent implements OnInit {
 
   form: FormGroup;
 
@@ -31,24 +31,5 @@ export class LoginComponent implements OnInit {
         this.show=false;
       }
     });  
-  }
-
-  public Sign(form: FormGroup) {
-    this.seriesService.login(form.value.userName, form.value.userPassword).subscribe((res) => {
-      if (res.ok)
-      {
-        this.show=false;
-      }
-    });  
-  }
-
-  public OpenForm()
-  {
-    this.show = true;
-  }
-
-  public CloseForm()
-  {
-    this.show = false;
   }
 }

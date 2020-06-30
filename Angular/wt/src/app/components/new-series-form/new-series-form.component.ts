@@ -10,6 +10,7 @@ import { SeriesService } from 'src/app/services/series.service';
 })
 export class NewSeriesFormComponent implements OnInit {
   form : FormGroup;
+  logText:string;
 
   constructor(private seriesService : SeriesService) { }
 
@@ -34,5 +35,6 @@ export class NewSeriesFormComponent implements OnInit {
       Remark: form.value.remark
     })
     .subscribe(console.log);
+    this.logText = "Die Serie wurde hinzugefügt";
   }
 }

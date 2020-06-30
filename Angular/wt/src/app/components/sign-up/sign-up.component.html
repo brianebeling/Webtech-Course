@@ -1,14 +1,10 @@
-
-<a href="#" class="textButton" (click)="OpenForm()">Anmelden</a>
 <div class="bg-modal" *ngIf="show">
     <div class="modal-content">
         <form [formGroup]="form" (ngSubmit)="onSubmit(form)">
             <input type="text" placeholder="Benutzername" formControlName="userName">
             <input type="password" placeholder="Passwort" formControlName="userPassword">
-            <button type="submit" class="textButton">Bestätigen</button>
-            <a href="#" class="altTextButton" (click)="CloseForm()">Abbrechen</a>
-            <a href="#" class="altTextButton" (click)="Sign(form)">Sign Up</a>
+            <button type="submit" class="textButton">Sing Up</button>
+            <a href="#" class="altTextButton">Abbrechen</a>
         </form>
     </div>
 </div>
-

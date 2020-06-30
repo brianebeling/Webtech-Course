@@ -8,6 +8,8 @@ import { ButtonComponent } from './components/button/button.component';
 import { NewSeriesFormComponent } from './components/new-series-form/new-series-form.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { SignUpComponent } from './components/sign-up/sign-up.component';
+import { SeriesAddedNotifyComponent } from './components/series-added-notify/series-added-notify.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +17,9 @@ import { HttpClientModule } from '@angular/common/http';
     LoginComponent,
     NavbarComponent,
     ButtonComponent,
-    NewSeriesFormComponent
+    NewSeriesFormComponent,
+    SignUpComponent,
+    SeriesAddedNotifyComponent
 
   ],
   imports: [

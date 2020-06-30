@@ -3,11 +3,11 @@ import { SeriesService } from 'src/app/services/series.service';
 import { FormGroup, FormControl } from '@angular/forms';
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  selector: 'app-sign-up',
+  templateUrl: './sign-up.component.html',
+  styleUrls: ['./sign-up.component.css']
 })
-export class LoginComponent implements OnInit {
+export class SignUpComponent implements OnInit {
 
   form: FormGroup;
 
@@ -31,24 +31,5 @@ export class LoginComponent implements OnInit {
         this.show=false;
       }
     });  
-  }
-
-  public Sign(form: FormGroup) {
-    this.seriesService.login(form.value.userName, form.value.userPassword).subscribe((res) => {
-      if (res.ok)
-      {
-        this.show=false;
-      }
-    });  
-  }
-
-  public OpenForm()
-  {
-    this.show = true;
-  }
-
-  public CloseForm()
-  {
-    this.show = false;
   }
 }
