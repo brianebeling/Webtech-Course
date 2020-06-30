@@ -93,10 +93,11 @@
 				
 				a.appendChild(thumb);
 				a.href = ('serie_detail.html?title=' + element.title);
+                                
 
-				thumb.src = 'Thumbs/1.png';
+				thumb.src = '';
 				thumb.className = 'grid-item';
-				thumb.alt = 'Thumbnail';
+				thumb.alt = element.title;
 
 				console.log(thumb);
 				document.getElementsByClassName('grid-container')[0].appendChild(a);

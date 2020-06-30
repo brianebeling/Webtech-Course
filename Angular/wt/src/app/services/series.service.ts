@@ -10,7 +10,7 @@ export class SeriesService {
 
   constructor(private http: HttpClient) { }
 
-  url = new URL("http://localhost:8080/steam/resources/");
+  url = new URL("http://localhost:8080/JavaScript/resources/");
 
   username: string;
 

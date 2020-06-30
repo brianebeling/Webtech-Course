@@ -1,4 +1,4 @@
-const url = new URL("http://localhost:8080/steam/resources/")
+const url = new URL("http://localhost:8080/JavaScript/resources/")
 const seriesEndpoint = "series";
 const usersEndpoint = "users";
 
