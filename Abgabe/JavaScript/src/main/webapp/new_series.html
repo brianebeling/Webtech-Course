@@ -150,7 +150,14 @@
 			};
 
 			console.log(seriesData);
-			addOrModifySeries(seriesData).then(location.replace('index.html'));
+			addOrModifySeries(seriesData)
+			.then((response) => {
+				if (response.ok)
+				{
+					location.replace('index.html');
+				}
+			})
+			.catch(console.log);
 
 
 		};
