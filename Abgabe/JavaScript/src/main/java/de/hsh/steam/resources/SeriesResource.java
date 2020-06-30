@@ -26,7 +26,7 @@ import javax.ws.rs.core.Response;
 public class SeriesResource {
         
     @POST
-    @Path("/")
+    @Path("/add")
     @Consumes(MediaType.APPLICATION_JSON)
     public Response addOrModifySeries(
             @ApiParam(value = "The user to add the series to", required = false) @QueryParam("username") String username,

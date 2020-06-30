@@ -51,7 +51,7 @@ function isLoggedIn()
 	return true;
 }
 
-async function addOrModifySeries(seriesData)
+function addOrModifySeries(seriesData)
 {
 	if (!isLoggedIn())
 	{
@@ -60,15 +60,13 @@ async function addOrModifySeries(seriesData)
 
 	var username = sessionStorage.getItem("sessionUser");
 
-	let response = await fetch(url + seriesEndpoint + '?username=' + username, {
+	return fetch(url + seriesEndpoint + '/add?username=' + username, {
 		method: 'POST',
 		headers: {
 			'Content-Type': 'application/json'
 		},
 		body: JSON.stringify(seriesData)
 	});
-
-	console.log(response);
 }
 
 async function getRating(seriesName)
