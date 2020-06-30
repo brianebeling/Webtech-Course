@@ -30,8 +30,9 @@ export class NewSeriesFormComponent implements OnInit {
       numberOfSeasons: form.value.seasons,
       genre: form.value.genre,
       streamingProvider: form.value.platform,
-      score: form.value.rating,
-      remark: form.value.remark
+      Score: form.value.rating,
+      Remark: form.value.remark
     })
+    .subscribe(console.log);
   }
 }
